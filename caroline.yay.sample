@@ -1,0 +1,10 @@
+
+projects:
+  - name: example
+    repo:
+      type: git
+      url: git://github.com/Jc2k/sidekick-example
+
+    on-failure: rollback
+    on-success: leave-running
+
