@@ -4,8 +4,11 @@ Caroline
 
 Caroline provides a stock buildbot configuration for teams which use Sidekick.
 Caroline will deploy your Sidekick cluster on every commit providing instant
-feedback if you introduce problems. Caroline will be your nemesis, watching
-you, testing, pointing out your mistakes.
+feedback if you introduce problems. If you use the Yaybu/Sidekick test harness,
+she will run your tests too.
+
+Caroline will be your nemesis, watching you, testing you, pointing and laughing
+at your mistakes.
 
 
 Installation
