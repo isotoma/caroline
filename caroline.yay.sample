@@ -3,7 +3,7 @@ projects:
   - name: example
     repo:
       type: git
-      url: git://github.com/Jc2k/sidekick-example
+      url: git://github.com/Jc2k/vagrant-example
 
     on-failure: rollback
     on-success: leave-running

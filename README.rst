@@ -2,10 +2,9 @@
 Caroline
 ========
 
-Caroline provides a stock buildbot configuration for teams which use Sidekick.
-Caroline will deploy your Sidekick cluster on every commit providing instant
-feedback if you introduce problems. If you use the Yaybu/Sidekick test harness,
-she will run your tests too.
+Caroline provides a stock buildbot configuration for teams which use Vagrant,
+in particular vagrant-yaybu. Caroline will deploy your Vagrant cluster on every
+commit providing instant feedback if you introduce problems.
 
 Caroline will be your nemesis, watching you, testing you, pointing and laughing
 at your mistakes.
@@ -14,8 +13,8 @@ at your mistakes.
 Installation
 ============
 
-Caroline comes with a simple buildout which installs sidekick and sets up a
-buildbot master and slave::
+Caroline comes with a simple buildout which installs sets up a buildbot master
+and slave::
 
     python bootstrap.py
     ./bin/buildout
@@ -48,7 +47,7 @@ this::
 
         repo:
           type: git
-          url: git://github.com/Jc2k/sidekick-example
+          url: git://github.com/Jc2k/vagrant-example
 
         on-failure: rollback
         on-success: leave-running
@@ -87,12 +86,11 @@ The 'on-failure' option can be set to one of several values to control how
 Caroline deals with failed deployments.
 
 The default behaviour is to rollback to the last snapshot. You can explicitly
-set this behaviour with 'rollback'. This requires a sidekick environment that
-supports snapshots, like VMWare.
+set this behaviour with 'rollback'. This requires a vagrant environment that
+supports snapshots e.g. "vagrant-snap".
 
-You might be using a backend that doesn't support snapshots, or you would
-prefer to start from scartch after a failure. For that, you can set 'on-failure'
-to 'destroy'.
+You might prefer to prefer to start from scartch after a failure. For that, you
+can set 'on-failure' to 'destroy'.
 
 You might want to test your Yaybu cookbooks ability to deal with recovering
 from failure. You can, therefore, set 'on-failure' to 'leave-running'.
